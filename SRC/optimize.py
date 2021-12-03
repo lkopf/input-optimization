@@ -446,7 +446,8 @@ class _OptimizerParametrical(_Optimizer):
         else:
             fit_verbose = 0
         
-        self.model.fit_generator(generator, steps_per_epoch = self.steps, epochs = 1000, callbacks = callbacks, verbose = fit_verbose)
+        # original epochs = 1000
+        self.model.fit_generator(generator, steps_per_epoch = self.steps, epochs = 100, callbacks = callbacks, verbose = fit_verbose)
         self._store_weights()
 
 
